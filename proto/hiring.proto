@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package hiring;
+
+service HiringService {
+  rpc CreateHiringEvent (CreateHiringEventRequest) returns (CreateHiringEventResponse) {}
+}
+
+message CreateHiringEventRequest {
+  int32 hiringEventId = 1;
+  int32 score = 2;
+  int32 userId = 3;
+}
+
+message CreateHiringEventResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
